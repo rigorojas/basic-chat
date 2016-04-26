@@ -1,5 +1,4 @@
 var express = require('express')();
-var serveStatic = require('serve-static');
 var http = require('http').Server(express);
 var socketio = require('socket.io')(http);
 var path = require('path');
