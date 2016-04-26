@@ -4,11 +4,9 @@ var http = require('http').Server(express);
 var socketio = require('socket.io')(http);
 var path = require('path');
 
-var appPath = "..";
-express.use(serveStatic(path.resolve("..", "public")));
-
 express.get('/', function(req, res){
-    res.sendFile("../public/index.html");
+    res.sendFile(path.resolve('public/index.html'));
+    //res.sendFile(__dirname + "/../public/index.html");
 });
 
 socketio.on('connection', function(socket){
