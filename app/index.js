@@ -4,11 +4,8 @@ var http = require('http').Server(express);
 var socketio = require('socket.io')(http);
 var path = require('path');
 
-var appPath = "..";
-express.use(serveStatic(path.resolve("..", "public")));
-
 express.get('/', function(req, res){
-    res.sendFile("../public/index.html");
+    res.sendFile(path.resolve(__dirname,'../public/index.html'));
 });
 
 socketio.on('connection', function(socket){
@@ -17,6 +14,6 @@ socketio.on('connection', function(socket){
     });
 });
 
-http.listen(80, function(){
-    console.log('listening on *:80');
+http.listen(3000, function(){
+    console.log('listening on *:3000');
 });
