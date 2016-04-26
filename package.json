@@ -4,7 +4,6 @@
     "description": "Basic chat example using node, express and socket.io",
     "dependencies": {
         "express": "4.10.2",
-        "serve-static": "^1.10.2",
         "socket.io": "1.2.0"
     },
     "scripts": {
